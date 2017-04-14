@@ -1,0 +1,82 @@
+<article class="highlightslist <% if (pageID == 'home') { %>jumbotron hidden-xs<% } %>">
+  <div class="container">
+    <div class="row">
+      <% highlights.forEach(function(item) { %>
+        <div class="<% if (pageID == 'home') { %>col-xs-12 col-sm-12 col-md-4 col-lg-3 text-center<% } else { %>col-sm-8 <% } %>">
+          <h3 class="highlightslist-title"><%= item.site %></h3>
+          <h5 class="highlightslist-name">Bork <a href="/highlights/<%= item.id %>"></a></h5>
+          <div class="highlightslist-info">
+            <a href="/highlights/<%= item.id %>">
+
+              <% if (pageID == 'home') { %>
+                <img class="highlightslist-img img-circle" src="<%= item.image %>" alt="Photo of <%= item.site %>"width="300px"></a>
+                <% } %>
+
+                <% if (pageID == 'highlightsList') { %>
+                  <div class="container" style="width:850px;">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <img class="highlightslist-img img-circle pull-left" src="<%= item.image %>" alt="Photo of <%= item.site %>"width="300px"></a>
+                      </div>
+                      <div class="col-md-6">
+                        <iframe width="300" height="200" src=" <%-item.videoEmbed %> "> </iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+                </a>
+
+                <% if (pageID == 'highlightDetail') { %>
+                  <img class="highlightslist-img img-responsive pull-left" src="<%= item.image %>" alt="Photo of <%= item.site %>"width="400px"></a>
+                  <% } %>
+                </a>
+
+                <% if (pageID !== 'home') { %>
+                  <% if (pageID == 'highlightsList') { %>
+
+                    <% } else { %>
+                      <div style= "clear: both;"><%- item.info %></div>
+                      <div class="container" style="width:850px;">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <iframe width="400" height="300" src=" <%-item.videoEmbed %> "> </iframe>
+                          </div>
+                          <div id = "map<%=item.id%>" class="col-md-6" style="width:400px; height:300px;">
+                            Hello World
+                          </div>
+                          <script>
+                          function initMap() {
+                            var centerPos = {lat: 46.666040, lng: 8.043535};
+                            var marker1Pos = {lat: <%-item.lat %>, lng: <%-item.long %>};
+                            var map = new google.maps.Map(document.getElementById('map<%=item.id%>'), {
+                              center: centerPos,
+                              zoom: 7,
+                              mapTypeId: google.maps.MapTypeId.HYBRID,
+                              draggable: true,
+                            });
+                            var marker = new google.maps.Marker({
+                              position: marker1Pos,
+                              map: map,
+                              title: '<%- item.site %>'
+                            });
+                            var content = <%=item.site %>;
+                              var infowindow = new google.maps.InfoWindow({
+                                content: content
+                            });
+                            marker.addListener('click', function(){
+                              infowindow.open(map, marker);
+                            });
+                          }
+                          </script>
+                          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkGXKqryRAntACFGym5tBgcd06J1qefRk&callback=initMap"
+                          async defer></script>
+                        </div>
+                      </div>
+                      <% } %>
+                      <% } %>
+                    </div>
+                  </div>
+                  <%  }); %>
+                </div><!-- row -->
+              </div><!-- container -->
+            </article>
