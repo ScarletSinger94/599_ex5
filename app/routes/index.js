@@ -2,18 +2,18 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-  var data = req.app.get('appData');
+  var dataFile = req.app.get('appData');
   var pagePhotos = [];
-  var pageSpeakers = data.speakers;
+  var pageHighlights = dataFile.data.highlights;
 
-  data.speakers.forEach(function(item) {
-    pagePhotos = pagePhotos.concat(item.artwork);
+  dataFile.data.highlights.forEach(function(item) {
+    pagePhotos = pagePhotos.concat(item.image);
   });
 
   res.render('index', {
     pageTitle: 'Home',
     artwork: pagePhotos,
-    speakers: pageSpeakers,
+    highlights: pageHighlights,
     pageID: 'home'
   });
 
