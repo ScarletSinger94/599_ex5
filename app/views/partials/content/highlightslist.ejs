@@ -41,14 +41,14 @@
                           <div class="col-md-6">
                             <iframe width="400" height="300" src=" <%-item.videoEmbed %> "> </iframe>
                           </div>
-                          <div id = "map <%=item.id%>" class="col-md-6" style="width:400px; height:300px;">
+                          <div id = "map<%=item.id%>" class="col-md-6" style="width:400px; height:300px;">
                             Hello World
                           </div>
                           <script>
                           function initMap() {
                             var centerPos = {lat: 46.666040, lng: 8.043535};
                             var marker1Pos = {lat: <%-item.lat %>, lng: <%-item.long %>};
-                            var map = new google.maps.Map(document.getElementById('map <%=item.id%>'), {
+                            var map = new google.maps.Map(document.getElementById('map<%=item.id%>'), {
                               center: centerPos,
                               zoom: 7,
                               mapTypeId: google.maps.MapTypeId.HYBRID,
@@ -59,12 +59,12 @@
                               map: map,
                               title: '<%- item.site %>'
                             });
-                            marker.addlistener('click',function(){
+                            var content = <%=item.site %>;
                               var infowindow = new google.maps.InfoWindow({
-                                content: "<%=item.category%>",
-                                width: 400
-                              });
-                              infowindow.open(map,marker);
+                                content: content
+                            });
+                            marker.addListener('click', function(){
+                              infowindow.open(map, marker);
                             });
                           }
                           </script>
