@@ -1,6 +1,5 @@
 # Building a Website with Node & ExpressJS
-This is the repository for my course, [Building a Website with Node & ExpressJS](). The full course will be available at [lynda.com](http://lynda.com).
-- [My Personal Website](http://raybo.org)
+This is the repository for my course, Web Design 599 at Rutgers University. This code is built off of source code adapted from Ray Villalobos and Andselm Spoerri.
 
 
 ## Instructions
