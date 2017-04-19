@@ -37,8 +37,7 @@ header {
 header .jumbotron {
   height: 40vh;
   margin-bottom: 0;
-  background: url(https://thelittlewashhouse.files.wordpress.com/2015/02/appenzeller-alpaufzug-687d32ee-f88e-4cdd-8395-8c4ed2e4e28f.jpg) no-repeat 100% 80%;
-  -webkit-background-size: cover;
+background: url(https://thelittlewashhouse.files.wordpress.com/2015/02/appenzeller-alpaufzug-687d32ee-f88e-4cdd-8395-8c4ed2e4e28f.jpg) no-repeat 100% 80%;  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;

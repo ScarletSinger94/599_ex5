@@ -6,11 +6,11 @@
   "scripts": {
     "start": "nodemon -e css,ejs,js,json --watch app"
   },
-  "author": "Joshua Rochotte (building on Ray Villalobos' code",
+  "author": "JOSH ROCHOTTE (building on Ray Villalobos' code",
   "license": "MIT",
   "dependencies": {
-    "ejs": "^2.5.6",
-    "express": "^4.15.2",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
     "reload": "^1.0.0"
   }
 }
