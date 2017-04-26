@@ -6,7 +6,7 @@ router.get('/highlights', function(req, res) {
   var pagePhotos = [];
   var pageHighlights = dataFile.data.highlights;
 
-dataFile.data.highlights.forEach(function(item) {
+  dataFile.data.highlights.forEach(function(item) {
     pagePhotos = pagePhotos.concat(item.image);
   });
 
@@ -30,7 +30,7 @@ router.get('/highlights/:highlightid', function(req, res) {
     }
   });
 
-  res.render('Highlights', {
+  res.render('highlights', {
     pageTitle: 'Highlight Info',
     artwork: pagePhotos,
     highlights: pageHighlights,

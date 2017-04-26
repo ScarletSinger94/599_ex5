@@ -7,8 +7,8 @@ router.get('/', function(req, res) {
   var pageHighlights = dataFile.data.highlights;
 
   dataFile.data.highlights.forEach(function(item) {
-      pagePhotos = pagePhotos.concat(item.image);
-    });
+    pagePhotos = pagePhotos.concat(item.image);
+  });
 
   res.render('index', {
     pageTitle: 'Home',
@@ -16,6 +16,7 @@ router.get('/', function(req, res) {
     highlights: pageHighlights,
     pageID: 'home'
   });
+
 });
 
 module.exports = router;

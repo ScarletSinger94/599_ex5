@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,7 +38,8 @@ header {
 header .jumbotron {
   height: 40vh;
   margin-bottom: 0;
-background: url(https://thelittlewashhouse.files.wordpress.com/2015/02/appenzeller-alpaufzug-687d32ee-f88e-4cdd-8395-8c4ed2e4e28f.jpg) no-repeat 100% 80%;  -webkit-background-size: cover;
+  background: url(https://thelittlewashhouse.files.wordpress.com/2015/02/appenzeller-alpaufzug-687d32ee-f88e-4cdd-8395-8c4ed2e4e28f.jpg) no-repeat 100% 80%;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -113,8 +115,9 @@ header .navbar-inverse .navbar-nav>li>a {
   line-height: 160%;
 }
 
-#highlightList .highlightlist-img {
+#highlightsList .highlightslist-img {
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .highlightslist-title {
@@ -123,14 +126,23 @@ header .navbar-inverse .navbar-nav>li>a {
 
 #home .highlightslist-title {
   font-size: 1.5em;
+
 }
 
 #highlightDetail .highlightslist-title {
   font-size: 2.4em;
+
 }
 
 #highlightDetail .highlightslist-img {
   margin: 20px 0;
+
+}
+
+#highlightDetail .highlightslist-text {
+  margin: 20px 0;
+  width: 800px;
+
 }
 
 .form-control {
@@ -223,4 +235,22 @@ header .navbar-inverse .navbar-nav>li>a {
   .pixgrid img {
     width: 20%;
   }
+}
+
+/* google maps css */
+#map {
+  height: 300px;
+  width:  400px;
+  margin-bottom: 10px;
+}
+.category {
+  float: left;
+  /*margin-right: 25px;*/
+  width: 75px;
+}
+.windowBorder {
+  border: 2px;
+  border-left: 10px;
+  border-style: solid;
+  padding: 10px;
 }
